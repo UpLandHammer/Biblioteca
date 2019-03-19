@@ -12,6 +12,35 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+<<<<<<< HEAD
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "livro")
+public class Livro implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@Column(name = "id_livro")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+
+	@Column(name = "nome")
+	private String nome;
+
+	@Column(name = "qt_paginas")
+	private Integer qtPaginas;
+
+	@ManyToOne
+=======
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -37,6 +66,7 @@ public class Livro implements Serializable {
 	private Integer qtPaginas;
 
 	@ManyToOne(fetch = FetchType.LAZY)
+>>>>>>> branch 'master' of https://github.com/UpLandHammer/biblioteca.git
 	@JoinColumn(name = "id_autor")
 	private Autor autor;
 }
